@@ -2,8 +2,8 @@
 # Test for OSX with [ -n "$IS_OSX" ]
 
 function pre_build {
-    - pip install --only-binary=numpy,scipy numpy scipy pytest
-    - make install
+    pip install --only-binary=numpy,scipy numpy scipy pytest
+    make install
 }
 
 function run_tests {
