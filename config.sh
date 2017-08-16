@@ -8,6 +8,6 @@ function pre_build {
 
 function run_tests {
     python --version
-    make develop
+#    make develop
     python -c 'import sys; import yourpackage; sys.exit(yourpackage.test())'
 }

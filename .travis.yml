@@ -1,10 +1,12 @@
+notifications:
+  email: false
 env:
     global:
         - REPO_DIR=mollib
         # Commit from your-project that you want to build
         - BUILD_COMMIT=v1.0
         # pip dependencies to _build_ your project
-        - BUILD_DEPENDS="Cython numpy"
+        - BUILD_DEPENDS="Cython numpy scipy"
         # pip dependencies to _test_ your project.  Include any dependencies
         # that you need, that are also specified in BUILD_DEPENDS, this will be
         # a separate install.
