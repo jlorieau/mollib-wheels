@@ -114,7 +114,7 @@ script:
     - install_run $PLAT
 
 after_success:
-    # Upload wheels to Rackspace container
+    # Upload wheels to Rackspace container (need to be modified)
     - pip install wheelhouse-uploader
     # This uploads the wheels to a Rackspace container owned by the
     # scikit-learn team, available at http://wheels.scipy.org.  See above
