@@ -8,9 +8,8 @@ function pre_build {
 
 function run_tests {
     python --version
-    ls /io
-    ls /io/mollib
-    cd /io/mollib
+    ls /io/mollib/mollib
+    cd /io/mollib/mollib
     make develop
     pytest
 }
