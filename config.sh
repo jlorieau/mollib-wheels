@@ -8,7 +8,8 @@ function pre_build {
 
 function run_tests {
     python --version
-    python -m pytest
+    pytest
+#    python -m pytest
 #    python -c 'import sys; import mollib; sys.exit(mollib.test())'
 #    ls /io/mollib/mollib
 #    cd /io/mollib
