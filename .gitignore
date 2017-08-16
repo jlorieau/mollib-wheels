@@ -1,0 +1,18 @@
+# System and build files
+.DS_Store
+*.pyc
+*.so
+*.egg-info
+.eggs
+*.tar
+*~
+build/
+dist/
+
+# IDE and temporary tests
+.idea
+.tox
+.cache
+.coverage**
+.noseids
+nosetests.json
