@@ -9,5 +9,5 @@ function pre_build {
 function run_tests {
     python --version
 #    make develop
-    python -c 'import sys; import yourpackage; sys.exit(yourpackage.test())'
+    python -c 'import sys; import mollib; sys.exit(yourpackage.test())'
 }
