@@ -8,7 +8,10 @@ function pre_build {
 
 function run_tests {
     python --version
-    ls /io/tmp_for_test
+    ls -hlrt /io/
+    ls  -hlrt /io/tmp_for_test
+    pwd
+    ls -hlrt .
     pytest
 #    python -m pytest
 #    python -c 'import sys; import mollib; sys.exit(mollib.test())'
