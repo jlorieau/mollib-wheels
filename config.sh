@@ -8,6 +8,9 @@ function pre_build {
 
 function run_tests {
     python --version
-#    make develop
-    python -c 'import sys; import mollib; sys.exit(yourpackage.test())'
+    ls /io
+    ls /io/mollib
+    cd /io/mollib
+    make develop
+    pytest
 }
