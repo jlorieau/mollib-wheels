@@ -8,7 +8,8 @@ function pre_build {
 
 function run_tests {
   echo run_tests
-  find /venv/lib/python3.6/site-packages/mollib/
-  more ../mollib/MANIFEST.in
+  # The following only tests unit tests. The doctests aren't tested due to
+  # name collisions between the installed version and the source code. These
+  # are tested separately.
   pytest ../mollib/tests
 }
