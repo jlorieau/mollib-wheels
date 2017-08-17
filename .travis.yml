@@ -113,10 +113,6 @@ script:
     - install_run $PLAT
 
 after_success:
-    # Upload wheels to Rackspace container (need to be modified)
-    - pip install wheelhouse-uploader
-    # This uploads the wheels to a Rackspace container owned by the
-    # scikit-learn team, available at http://wheels.scipy.org.  See above
-    # for information on using this account or choosing another.
+    - pip install twine
     - find ${TRAVIS_BUILD_DIR}/wheelhouse/
     - twine upload ${TRAVIS_BUILD_DIR}/wheelhouse/*.whl
