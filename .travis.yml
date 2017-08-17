@@ -115,6 +115,12 @@ script:
     - install_run $PLAT
 
 after_success:
+    - env:
+      - TWINE_USERNAME=jlorieau
+      - TWINE_REPOSITORY=https://testpypi.python.org/pypi/
+      - TWINE_REPOSITORY_URL=https://testpypi.python.org/pypi/
+      - secure: "BXHQ7pr40783qIZBN/M3sTu7/6ttK11iDM11sH3FBvP6SkuKgJHrGZbKG+D+c1bh64Gd18BWAz8q6QJuYckgBq2yC/MdxFOZXH7j0O87CES5NEEN6110UL6VrgLVdEYiRoVq1cnAQu9fx6RPtqBJBvfAIEhvAS7cfYIDjrhLCGEB6GDmEdZdBb/gR4lGbrteOUPLywJISqMDTBENZHKeM1iu9qV2cPUOUVIE6k6maFIuw9/zLCGFRFStRp/uX9x6UA6FvRyLRg4J9x/L9ZWI/8zuvOnzcsVWrLBNVnWeTT5Uzk7fHXHMTlb447GnkJmNP4UmBFbJSbQVCzWSO1t5nckh5QJomX8yxUieXKEyCZ/4L/NqarMu7TPm8MdaPDRLoK42Iusfm689XRgo9P7jOllhgiKeFlXPfd8xdlrD8KHpVJwJYkLqLIgAhSZGGS/a04zcgbCNxV0ZOcaKgZOEr1w7TnUliKE0vQpxU0qwD9ccg1pCNQisJy9yEjEG5JSg8f+2UXwe6LODxTD+nMcw0S8N7aOlgdyQyKsFvtK57zeDcpwTD/l+M8+ZwT4N3sz7vXExKotEx22g/c+bwL5ma4TcZEsUHPA96BOP/qOsiyCKF1eQt9PR19i0+5FQRRm8CjrHXxx3F08Mjubeia9GuR5536d0iuqn4PGVovI98nM="
+
     - pip install twine
     - find ${TRAVIS_BUILD_DIR}/wheelhouse/
     - if [ -z "$TWINE_PASSWORD" ]; then echo "Need to set TWINE_PASSWORD"; fi
