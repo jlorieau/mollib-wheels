@@ -8,6 +8,5 @@ function pre_build {
 
 function run_tests {
   echo run_tests
-  TOXENV=py36
-  tox -r
+  tox -r -c ../$REPO_DIR/tox.ini
 }

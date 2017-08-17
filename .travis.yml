@@ -80,6 +80,7 @@ matrix:
 #        - PLAT=i686
     - os: linux
       env:
+        - TOXENV=py36
         - MB_PYTHON_VERSION=3.6
 #    - os: linux
 #      env:
