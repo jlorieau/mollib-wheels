@@ -1,5 +1,5 @@
 notifications:
-  email: false
+  email: true
 env:
   global:
   - REPO_DIR=mollib
@@ -9,8 +9,10 @@ env:
   - PLAT=x86_64
 #  - UNICODE_WIDTH=32
   - TWINE_USERNAME=jlorieau
-  - TWINE_REPOSITORY=https://test.pypi.org/legacy/
-  - TWINE_REPOSITORY_URL=https://test.pypi.org/legacy/
+  - TWINE_REPOSITORY=https://upload.pypi.org/legacy/
+  - TWINE_REPOSITORY_URL=https://upload.pypi.org/legacy/
+#  - TWINE_REPOSITORY=https://test.pypi.org/legacy/
+#  - TWINE_REPOSITORY_URL=https://test.pypi.org/legacy/
   - secure: OSBemaaRD8eKMx3DJYvi5+C6U5F8fNssl0Dal8zXgg9WCG49l7JKTeZuwUyBCKnIrUK18cENRVLSyEALv9OeFzw9aiOzmKzCRQUOhgoYaHlGfAIiT7HibHYF9NQb2mFrvaphAjKc1Dq+tIG/pUNT4PbA+sJdH2gr2Q/989tHYoROEXfx01ls4yglCaraagoCfxvwZ7gnX3dxJqRVAX6YTxZEiC4N6JQUavL5SqBmh/2pyy2wVZZn4cjlaOwKw9S1zRNKEgthTQAJMZEm0KF0EI7//EIu2Xlm0bYtbxR/Xnfrwmd+gI0DXrCd+mSEXEr8EjJbSP6hrEMH1OxJPKpqidXXlf//flXM7savIs/yMU1Cr66UdGhFRt8l+p53d7Iy7MqS7n3AMDD2mTeCoV0TsFthV8qJoY9CTIjXclVlCbsGpCU62SYstVja5S+hG5D8g7OjEzESdTfFogaY5Cfq7RCdGJ6MCBUO35+uyp1vox0NA63Crfr74GNs8qpWkkTcnbI9rLeogGsTRIf49ZgYRNw2GrxuTazIS9cYqdDwW8eOEzfuX8XGtsStAsSRcrtCmipSbYBuRr9BtNdnoL7uWFTnyCfyMvXgbSGIMZShDFg/ldv9XTDDH+NHqQ9j26vovQk22S4gpKTnwJrZX3hm6KNNshBYdeJYH1iA6kjswYU=
 
 language: python
