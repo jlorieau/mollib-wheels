@@ -9,5 +9,6 @@ function pre_build {
 function run_tests {
   echo run_tests
   find /venv/lib/python3.6/site-packages/mollib/
+  more ../mollib/MANIFEST.in
   pytest ../mollib/tests
 }
