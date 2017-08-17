@@ -8,6 +8,6 @@ function pre_build {
 
 function run_tests {
   echo run_tests
-  pytest ../mollib/tests
   find /venv/lib/python3.6/site-packages/mollib/
+  pytest ../mollib/tests
 }
