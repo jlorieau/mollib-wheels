@@ -122,7 +122,7 @@ after_success:
     # This uploads the wheels to a Rackspace container owned by the
     # scikit-learn team, available at http://wheels.scipy.org.  See above
     # for information on using this account or choosing another.
-    find ${TRAVIS_BUILD_DIR}/wheelhouse/
+    - find ${TRAVIS_BUILD_DIR}/wheelhouse/
     - python -m wheelhouse_uploader upload --local-folder
         ${TRAVIS_BUILD_DIR}/wheelhouse/
         --no-update-index
