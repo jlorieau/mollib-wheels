@@ -8,5 +8,5 @@ function pre_build {
 
 function run_tests {
   echo run_tests
-  tox -r -c ../$REPO_DIR/tox.ini
+  tox -r -c ../mollib/tox.ini
 }
