@@ -115,7 +115,6 @@ script:
     - install_run $PLAT
 
 after_success:
-    - env:
     - pip install twine
     - find ${TRAVIS_BUILD_DIR}/wheelhouse/
     - if [ -z "$TWINE_PASSWORD" ]; then echo "Need to set TWINE_PASSWORD"; fi
