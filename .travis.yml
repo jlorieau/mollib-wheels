@@ -7,7 +7,7 @@ env:
   - BUILD_DEPENDS="Cython numpy scipy"
   - TEST_DEPENDS="numpy scipy pytest tox"
   - PLAT=x86_64
-  - UNICODE_WIDTH=32
+#  - UNICODE_WIDTH=32
   - TWINE_USERNAME=jlorieau
   - TWINE_REPOSITORY=https://test.pypi.org/legacy/
   - TWINE_REPOSITORY_URL=https://test.pypi.org/legacy/
@@ -24,57 +24,51 @@ matrix:
   - python: 3.5
   include:
     - os: linux
-      env: MB_PYTHON_VERSION=2.7
-    - os: linux
       env:
         - MB_PYTHON_VERSION=2.7
-        - UNICODE_WIDTH=16
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - UNICODE_WIDTH=16
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.4
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.4
-        - PLAT=i686
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - PLAT=i686
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - PLAT=i686
-    - os: osx
-      language: generic
-      env:
-        - MB_PYTHON_VERSION=2.7
-    - os: osx
-      language: generic
-      env:
-        - MB_PYTHON_VERSION=3.4
-    - os: osx
-      language: generic
-      env:
-        - MB_PYTHON_VERSION=3.5
-    - os: osx
-      language: generic
-      env:
-        - MB_PYTHON_VERSION=3.6
+#        - UNICODE_WIDTH=16
+#    - os: linux
+#      env:
+#        - MB_PYTHON_VERSION=2.7
+#        - PLAT=i686
+#        - UNICODE_WIDTH=16
+#    - os: linux
+#      env:
+#        - MB_PYTHON_VERSION=3.4
+#    - os: linux
+#      env:
+#        - MB_PYTHON_VERSION=3.4
+#        - PLAT=i686
+#    - os: linux
+#      env:
+#        - MB_PYTHON_VERSION=3.5
+#    - os: linux
+#      env:
+#        - MB_PYTHON_VERSION=3.5
+#        - PLAT=i686
+#    - os: linux
+#      env:
+#        - MB_PYTHON_VERSION=3.6
+#    - os: linux
+#      env:
+#        - MB_PYTHON_VERSION=3.6
+#        - PLAT=i686
+#    - os: osx
+#      language: generic
+#      env:
+#        - MB_PYTHON_VERSION=2.7
+#    - os: osx
+#      language: generic
+#      env:
+#        - MB_PYTHON_VERSION=3.4
+#    - os: osx
+#      language: generic
+#      env:
+#        - MB_PYTHON_VERSION=3.5
+#    - os: osx
+#      language: generic
+#      env:
+#        - MB_PYTHON_VERSION=3.6
 
 before_install:
 - source multibuild/common_utils.sh
