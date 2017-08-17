@@ -8,7 +8,6 @@ function pre_build {
 
 function run_tests {
   echo run_tests
-  cd ../mollib
-  make develop
-  pytest
+  TOXENV=py36
+  tox -r
 }
