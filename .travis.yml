@@ -116,4 +116,5 @@ script:
 after_success:
     - pip install twine
     - find ${TRAVIS_BUILD_DIR}/wheelhouse/
+    - if [ -z "$TWINE_PASSWORD" ]; then echo "Need to set TWINE_PASSWORD"; fi
     - twine upload ${TRAVIS_BUILD_DIR}/wheelhouse/*.whl
