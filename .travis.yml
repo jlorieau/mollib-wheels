@@ -1,121 +1,42 @@
 notifications:
   email: false
 env:
-    global:
-        - REPO_DIR=mollib
-        # Commit from your-project that you want to build
-        - BUILD_COMMIT=v1.0.4
-        # pip dependencies to _build_ your project
-        - BUILD_DEPENDS="Cython numpy scipy"
-        # pip dependencies to _test_ your project.  Include any dependencies
-        # that you need, that are also specified in BUILD_DEPENDS, this will be
-        # a separate install.
-        - TEST_DEPENDS="numpy scipy pytest tox"
-        - PLAT=x86_64
-        - UNICODE_WIDTH=32
-
-        - TWINE_USERNAME=jlorieau
-        - TWINE_REPOSITORY=https://test.pypi.org/legacy/
-        - TWINE_REPOSITORY_URL=https://test.pypi.org/legacy/
-        - secure: "BXHQ7pr40783qIZBN/M3sTu7/6ttK11iDM11sH3FBvP6SkuKgJHrGZbKG+D+c1bh64Gd18BWAz8q6QJuYckgBq2yC/MdxFOZXH7j0O87CES5NEEN6110UL6VrgLVdEYiRoVq1cnAQu9fx6RPtqBJBvfAIEhvAS7cfYIDjrhLCGEB6GDmEdZdBb/gR4lGbrteOUPLywJISqMDTBENZHKeM1iu9qV2cPUOUVIE6k6maFIuw9/zLCGFRFStRp/uX9x6UA6FvRyLRg4J9x/L9ZWI/8zuvOnzcsVWrLBNVnWeTT5Uzk7fHXHMTlb447GnkJmNP4UmBFbJSbQVCzWSO1t5nckh5QJomX8yxUieXKEyCZ/4L/NqarMu7TPm8MdaPDRLoK42Iusfm689XRgo9P7jOllhgiKeFlXPfd8xdlrD8KHpVJwJYkLqLIgAhSZGGS/a04zcgbCNxV0ZOcaKgZOEr1w7TnUliKE0vQpxU0qwD9ccg1pCNQisJy9yEjEG5JSg8f+2UXwe6LODxTD+nMcw0S8N7aOlgdyQyKsFvtK57zeDcpwTD/l+M8+ZwT4N3sz7vXExKotEx22g/c+bwL5ma4TcZEsUHPA96BOP/qOsiyCKF1eQt9PR19i0+5FQRRm8CjrHXxx3F08Mjubeia9GuR5536d0iuqn4PGVovI98nM="
-
+  global:
+  - REPO_DIR=mollib
+  - BUILD_COMMIT=v1.0.4
+  - BUILD_DEPENDS="Cython numpy scipy"
+  - TEST_DEPENDS="numpy scipy pytest tox"
+  - PLAT=x86_64
+  - UNICODE_WIDTH=32
+  - TWINE_USERNAME=jlorieau
+  - TWINE_REPOSITORY=https://test.pypi.org/legacy/
+  - TWINE_REPOSITORY_URL=https://test.pypi.org/legacy/
+  - secure: OSBemaaRD8eKMx3DJYvi5+C6U5F8fNssl0Dal8zXgg9WCG49l7JKTeZuwUyBCKnIrUK18cENRVLSyEALv9OeFzw9aiOzmKzCRQUOhgoYaHlGfAIiT7HibHYF9NQb2mFrvaphAjKc1Dq+tIG/pUNT4PbA+sJdH2gr2Q/989tHYoROEXfx01ls4yglCaraagoCfxvwZ7gnX3dxJqRVAX6YTxZEiC4N6JQUavL5SqBmh/2pyy2wVZZn4cjlaOwKw9S1zRNKEgthTQAJMZEm0KF0EI7//EIu2Xlm0bYtbxR/Xnfrwmd+gI0DXrCd+mSEXEr8EjJbSP6hrEMH1OxJPKpqidXXlf//flXM7savIs/yMU1Cr66UdGhFRt8l+p53d7Iy7MqS7n3AMDD2mTeCoV0TsFthV8qJoY9CTIjXclVlCbsGpCU62SYstVja5S+hG5D8g7OjEzESdTfFogaY5Cfq7RCdGJ6MCBUO35+uyp1vox0NA63Crfr74GNs8qpWkkTcnbI9rLeogGsTRIf49ZgYRNw2GrxuTazIS9cYqdDwW8eOEzfuX8XGtsStAsSRcrtCmipSbYBuRr9BtNdnoL7uWFTnyCfyMvXgbSGIMZShDFg/ldv9XTDDH+NHqQ9j26vovQk22S4gpKTnwJrZX3hm6KNNshBYdeJYH1iA6kjswYU=
+  
 language: python
-# The travis Python version is unrelated to the version we build and test
-# with.  This is set with the MB_PYTHON_VERSION variable.
 python: 3.5
 sudo: required
 dist: trusty
 services: docker
-
 matrix:
   exclude:
-    # Exclude the default Python 3.5 build
-    - python: 3.5
+  - python: 3.5
   include:
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=2.6
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=2.6
-#        - PLAT=i686
-#    - os: linux
-#      env: MB_PYTHON_VERSION=2.7
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=2.7
-#        - UNICODE_WIDTH=16
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=2.7
-#        - PLAT=i686
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=2.7
-#        - PLAT=i686
-#        - UNICODE_WIDTH=16
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=3.3
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=3.3
-#        - PLAT=i686
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=3.4
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=3.4
-#        - PLAT=i686
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=3.5
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=3.5
-#        - PLAT=i686
-    - os: linux
-      env:
-        - TOXENV=py36
-        - MB_PYTHON_VERSION=3.6
-#    - os: linux
-#      env:
-#        - MB_PYTHON_VERSION=3.6
-#        - PLAT=i686
-#    - os: osx
-#      language: generic
-#      env:
-#        - MB_PYTHON_VERSION=2.7
-#    - os: osx
-#      language: generic
-#      env:
-#        - MB_PYTHON_VERSION=3.4
-#    - os: osx
-#      language: generic
-#      env:
-#        - MB_PYTHON_VERSION=3.5
-#    - os: osx
-#      language: generic
-#      env:
-#        - MB_PYTHON_VERSION=3.6
-
+  - os: linux
+    env:
+    - TOXENV=py36
+    - MB_PYTHON_VERSION=3.6
 before_install:
-    - source multibuild/common_utils.sh
-    - source multibuild/travis_steps.sh
-    - before_install
-
+- source multibuild/common_utils.sh
+- source multibuild/travis_steps.sh
+- before_install
 install:
-    # Maybe get and clean and patch source
-    # - cp .pypirc ~
-    - clean_code $REPO_DIR $BUILD_COMMIT
-    - build_wheel $REPO_DIR $PLAT
-
+- clean_code $REPO_DIR $BUILD_COMMIT
+- build_wheel $REPO_DIR $PLAT
 script:
-    - install_run $PLAT
-
+- install_run $PLAT
 after_success:
-    - pip install twine
-    - find ${TRAVIS_BUILD_DIR}/wheelhouse/
-    - if [ -z "$TWINE_PASSWORD" ]; then echo "Need to set TWINE_PASSWORD"; fi
-    - twine upload ${TRAVIS_BUILD_DIR}/wheelhouse/*.whl
+- pip install twine
+- find ${TRAVIS_BUILD_DIR}/wheelhouse/
+- if [ -z "$TWINE_PASSWORD" ]; then echo "Need to set TWINE_PASSWORD"; fi
+- twine upload ${TRAVIS_BUILD_DIR}/wheelhouse/*.whl
