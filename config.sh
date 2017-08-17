@@ -2,7 +2,6 @@
 # Test for OSX with [ -n "$IS_OSX" ]
 
 function pre_build {
-    cp .pypirc ~
     pip install --only-binary=numpy,scipy numpy scipy pytest
     make install
 }
