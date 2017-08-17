@@ -8,5 +8,7 @@ function pre_build {
 
 function run_tests {
   echo run_tests
-  pytest ../mollib/
+  cd ../mollib
+  make develop
+  pytest
 }
