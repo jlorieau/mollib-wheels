@@ -3,7 +3,7 @@ notifications:
 env:
   global:
   - REPO_DIR=mollib
-  - BUILD_COMMIT=v1.0.8
+  - BUILD_COMMIT=v1.0.9
   - BUILD_DEPENDS="Cython numpy scipy"
   - TEST_DEPENDS="numpy scipy pytest tox"
   - PLAT=x86_64
